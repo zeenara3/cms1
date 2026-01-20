@@ -2,6 +2,7 @@ import { getAllPosts } from "@/lib/wordpress";
 import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 
+export const runtime = 'edge';
 export const revalidate = 600; // Revalidate every 10 minutes
 
 export default async function Home() {

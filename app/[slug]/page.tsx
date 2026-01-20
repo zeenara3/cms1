@@ -5,6 +5,7 @@ import { formatDate } from "@/lib/utils";
 
 // Force static generation for these paths would require getStaticParams, but we'll use dynamic rendering for now or generateParams if needed.
 // For Cloudflare Pages, standard on-request ISR/SSR works fine.
+export const runtime = 'edge';
 export const revalidate = 600;
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
