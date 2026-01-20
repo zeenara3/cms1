@@ -1,0 +1,14 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "cms1"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_als"]
+pages_build_output_dir = ".vercel/output/static"
+
+[observability]
+enabled = true
+
+[env.production]
+vars = { WORDPRESS_API_URL = "https://cms.imranmurtaza.com/graphql" }
+
+[env.preview]
+vars = { WORDPRESS_API_URL = "https://cms.imranmurtaza.com/graphql" }
