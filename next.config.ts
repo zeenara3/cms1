@@ -10,11 +10,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "faustexample.wpengine.com",
+        hostname: "via.placeholder.com",
       },
       {
         protocol: "https",
-        hostname: "via.placeholder.com",
+        hostname: "secure.gravatar.com",
       },
     ],
   },
