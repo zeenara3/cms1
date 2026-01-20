@@ -10,11 +10,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cms.imranmurtaza.com",
+        hostname: "faustexample.wpengine.com",
       },
       {
-        protocol: "https", // Fallback for various WP setups
-        hostname: "cms.imranmurtaza.com",
+        protocol: "https",
+        hostname: "via.placeholder.com",
       },
     ],
   },
