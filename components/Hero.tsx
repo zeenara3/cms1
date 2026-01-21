@@ -1,100 +1,95 @@
+```javascript
 
 import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@/lib/types';
-import { formatDate } from '@/lib/utils';
 
 export default function Hero({ post }: { post?: Post }) {
-    // Post is optional here as this is a static landing hero now.
+  
+  return (
+    <section className="relative w-full pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-black">
+        
+        {/* Background Gradients */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1ED760]/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 -z-10" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#1ED760]/5 blur-[100px] rounded-full -z-10" />
 
-    return (
-        <section className="relative w-full pt-32 pb-12 md:pt-40 md:pb-24 border-b border-white/5 overflow-hidden">
-
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-violet-900/20 via-black to-black -z-10" />
-            <div className="absolute top-0 right-0 w-1/2 h-[500px] bg-pink-500/10 blur-[120px] -z-10" />
-
-            <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-                {/* Left Content */}
-                <div className="text-left z-10">
-                    <div className="inline-flex items-center px-3 py-1 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-xs font-bold uppercase tracking-widest mb-6">
-                        Verified & Safe • v3.0 (Latest)
-                    </div>
-
-                    <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-                        Download <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500">PicsArt Mod APK</span> <br />
-                        For Android
-                    </h1>
-
-                    <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-                        Unlock premium features, remove ads, and access all gold assets for free.
-                        The ultimate photo editing experience on your mobile device.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-pink-600 text-white font-bold text-lg shadow-lg shadow-violet-500/25 hover:scale-105 transition-transform flex items-center justify-center gap-2">
-                            <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                            Download Now
-                        </button>
-                        <button className="px-8 py-4 rounded-xl bg-zinc-800 text-white font-bold text-lg hover:bg-zinc-700 transition-colors flex items-center justify-center gap-2">
-                            <svg className="size-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            App Info
-                        </button>
-                    </div>
-
-                    <div className="mt-8 flex items-center gap-6 text-sm text-zinc-500 font-medium">
-                        <div className="flex items-center gap-2">
-                            <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            Virus Free
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            Anti-Ban
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            All Assets Unlocked
-                        </div>
-                    </div>
+        <div className="container px-6 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Content */}
+            <div className="text-left z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-300 text-sm font-bold mb-8">
+                    <span className="size-2 rounded-full bg-[#1ED760] animate-pulse"></span>
+                    Updated: January 2026 • v9.1.2 (Latest)
                 </div>
+                
+                <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
+                    Spotify Premium <br/>
+                    <span className="text-[#1ED760]">Mod APK 2026</span>
+                </h1>
+                
+                <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
+                    Unlock ad-free music, unlimited skips, and offline listening for free. 
+                    The ultimate modified version of Spotify for Android.
+                </p>
 
-                {/* Right Content / Image Feature */}
-                <div className="relative mx-auto w-full max-w-md lg:max-w-full">
-                    <div className="relative aspect-[4/5] w-full bg-gradient-to-br from-zinc-800 to-black rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex items-center justify-center group">
-                        {/* Using the featured post image if available, otherwise a placeholder for the "App Screenshot" */}
-                        {post?.featuredImage?.node?.sourceUrl ? (
-                            <Image
-                                src={post.featuredImage.node.sourceUrl}
-                                alt="App Screenshot"
-                                fill
-                                className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                            />
-                        ) : (
-                            <div className="text-center p-8">
-                                <div className="size-24 bg-gradient-to-br from-violet-600 to-pink-500 rounded-3xl mx-auto mb-6 flex items-center justify-center text-4xl text-white font-bold shadow-lg shadow-pink-500/20">
-                                    P
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">PicsArt Premium</h3>
-                                <p className="text-zinc-400">The #1 Creative Platform</p>
-                            </div>
-                        )}
-
-                        {/* Floating Badge */}
-                        <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4">
-                            <div className="bg-green-500/20 text-green-400 p-2 rounded-lg">
-                                <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                            </div>
-                            <div>
-                                <div className="text-white font-bold">10M+ Downloads</div>
-                                <div className="text-xs text-zinc-400">Trusted by Creators</div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                    <button className="px-10 py-4 rounded-full bg-[#1ED760] text-black font-bold text-lg hover:bg-[#1fdf64] hover:scale-105 transition-all shadow-xl shadow-green-500/20 flex items-center justify-center gap-3">
+                        <svg className="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.35-1.434-5.308-1.758-8.796-.963-.335.077-.67-.133-.746-.467-.076-.335.132-.67.467-.746 3.808-.87 7.076-.496 9.726 1.115.294.18.386.563.206.857zm1.226-2.726c-.225.362-.693.475-1.055.253-2.695-1.657-6.8-2.14-9.97-1.173-.42.128-.86-.113-.986-.53-.127-.418.112-.86.53-.988 3.618-1.103 8.163-.56 11.234 1.328.36.223.474.69.25 1.056zm.106-2.88c-3.23-1.92-8.562-2.1-11.644-1.16-.477.144-.984-.13-.127-.606-.144-.477.13-.985.606-1.127 3.56-1.085 9.432-.87 13.09 1.3 2.478.283.65.116 1.126-.116 2.478-.367.283-.533.648-.25.533.65z"/></svg>
+                        Download APK
+                    </button>
+                    <button className="px-10 py-4 rounded-full bg-zinc-900 border border-zinc-800 text-white font-bold text-lg hover:bg-zinc-800 transition-colors flex items-center justify-center gap-3">
+                        More Versions
+                    </button>
                 </div>
-
+                
+                <div className="flex items-center gap-8 text-sm text-zinc-500 font-semibold">
+                   <div className="flex items-center gap-2">
+                     <svg className="size-5 text-[#1ED760]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
+                     Verified Safe
+                   </div>
+                   <div className="flex items-center gap-2">
+                     <svg className="size-5 text-[#1ED760]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
+                     No Root Needed
+                   </div>
+                </div>
             </div>
-        </section>
-    );
-}
 
+            {/* Right Content / App Image */}
+            <div className="relative mx-auto w-full max-w-md lg:max-w-full lg:pl-12">
+                 {/* Card Container */}
+                 <div className="relative aspect-[4/5] w-full max-w-sm mx-auto bg-zinc-900 rounded-[3rem] border-[4px] border-zinc-800 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8">
+                      {/* Fake Interface Elements */}
+                      <div className="w-full flex items-center justify-between mb-8 opacity-50">
+                          <div className="size-2 rounded-full bg-white/20"></div>
+                          <div className="w-12 h-2 rounded-full bg-white/20"></div>
+                          <div className="size-2 rounded-full bg-white/20"></div>
+                      </div>
+
+                      <div className="size-48 bg-gradient-to-br from-[#1ED760] to-[#169c46] rounded-3xl shadow-2xl shadow-green-500/20 flex items-center justify-center mb-8 relative">
+                          <svg className="size-24 text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.35-1.434-5.308-1.758-8.796-.963-.335.077-.67-.133-.746-.467-.076-.335.132-.67.467-.746 3.808-.87 7.076-.496 9.726 1.115.294.18.386.563.206.857zm1.226-2.726c-.225.362-.693.475-1.055.253-2.695-1.657-6.8-2.14-9.97-1.173-.42.128-.86-.113-.986-.53-.127-.418.112-.86.53-.988 3.618-1.103 8.163-.56 11.234 1.328.36.223.474.69.25 1.056zm.106-2.88c-3.23-1.92-8.562-2.1-11.644-1.16-.477.144-.984-.13-.127-.606-.144-.477.13-.985.606-1.127 3.56-1.085 9.432-.87 13.09 1.3 2.478.283.65.116 1.126-.116 2.478-.367.283-.533.648-.25.533.65z"/></svg>
+                          
+                          {/* Premium Badge */}
+                          <div className="absolute -top-4 -right-4 px-3 py-1 bg-white text-black text-xs font-black uppercase tracking-wider rounded-lg shadow-lg rotate-6">
+                            Premium
+                          </div>
+                      </div>
+
+                      <div className="text-center w-full">
+                          <div className="h-4 w-32 bg-white/10 rounded-full mx-auto mb-4"></div>
+                          <div className="h-3 w-48 bg-white/5 rounded-full mx-auto mb-8"></div>
+                          
+                          {/* Player Controls */}
+                          <div className="flex items-center justify-center gap-6 text-white/80">
+                               <svg className="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07l-1.41-1.41a3 3 0 000-4.24l1.41-1.41zM19.07 4.93a10 10 0 010 14.14l-1.41-1.41a8 8 0 000-11.31l1.41-1.41z"/></svg>
+                               <svg className="size-10 text-[#1ED760]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                               <svg className="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14 19h4V5h-4M6 19h4V5H6v14z"/></svg>
+                          </div>
+                      </div>
+                 </div>
+            </div>
+
+        </div>
+    </section>
+  );
+}
+```

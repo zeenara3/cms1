@@ -3,6 +3,7 @@ import { Post } from "@/lib/types";
 import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import AppInfoTable from "@/components/AppInfoTable";
+import Features from "@/components/Features";
 
 export const dynamic = 'force-static';
 export const revalidate = 600; // Revalidate every 10 minutes
@@ -22,33 +23,42 @@ export default async function Home() {
   const featuredPost = posts?.[0]; // Safe access
 
   return (
-    <div className="space-y-12 pb-20">
+    <div className="bg-black min-h-screen pb-20">
       <Hero post={featuredPost} />
 
-      <section className="container mx-auto px-6 max-w-5xl">
+      <Features />
+
+      <section className="container mx-auto px-6 max-w-5xl mt-20">
 
         {/* App Info Section */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-white mb-6 pl-4 border-l-4 border-pink-500">
-            PicsArt Mod APK Details
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+            <span className="w-1 h-8 bg-[#1ED760] rounded-full"></span>
+            Spotify Mod APK Details
           </h2>
           <AppInfoTable />
 
           <div className="prose prose-invert max-w-none text-zinc-300">
-            <p className="text-lg leading-relaxed mb-4">
-              PicsArt is the #1 photo and video editor on mobile. Download the **PicsArt Mod APK** today to access Gold features, remove watermarks, and use thousands of premium stickers, fonts, and frames without spending a dime.
+            <p className="text-lg leading-relaxed mb-6">
+              **Spotify Premium Mod APK** is the unlocked version of the world's most popular music streaming app. It gives you access to a massive library of millions of songs, podcasts, and videos from artists all over the globe, without any subscription fees.
             </p>
-            <p>
-              Whether you are a professional creator or just want to make your photos pop for social media, this unlocked version gives you the power of a desktop editor in the palm of your hand.
-            </p>
+            <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 my-8">
+              <h3 className="text-xl font-bold text-white mb-4 text-[#1ED760]">Why Download the Mod?</h3>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-zinc-400">
+                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> No Audio Ads</li>
+                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> Unlimited Skips</li>
+                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> Extreme Audio Quality</li>
+                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> No Root Required</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Blog / Resources Section */}
-        <div id="blogs" className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-white tracking-tight">Latest Blogs & Tutorials</h2>
-            <div className="h-px flex-1 bg-white/10 ml-6" />
+        <div id="blogs">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-3xl font-bold text-white tracking-tight">Latest Guides & Updates</h2>
+            <div className="h-px flex-1 bg-white/10 ml-8" />
           </div>
 
           {(!posts || posts.length === 0) ? (
