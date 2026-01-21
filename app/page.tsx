@@ -27,7 +27,7 @@ export default async function Home() {
 
   return (
     <div className="bg-black min-h-screen pb-20">
-      <Hero post={featuredPost} />
+      <Hero />
 
       <DownloadSection />
 
