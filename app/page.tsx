@@ -40,8 +40,7 @@ export default async function Home() {
 
   return (
     <div className="bg-black min-h-screen pb-20">
-      {/* Force hardcoded title to override WP "PicsArt" title */}
-      <Hero title="Download Spotify Premium Mod APK For Android" />
+      <Hero title={homePage?.title} />
 
       <DownloadSection />
 
@@ -55,8 +54,7 @@ export default async function Home() {
 
       <Compatibility />
 
-      {/* Force null content to trigger the default 'Spotifull' layout in AboutSection */}
-      <AboutSection content={null} />
+      <AboutSection content={homePage?.content} />
 
       <PlaylistGuide />
 
