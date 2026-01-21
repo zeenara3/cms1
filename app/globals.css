@@ -74,7 +74,34 @@ body {
   @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border-b border-gray-200 dark:border-gray-800;
 }
 
-/* WordPress Alignment Classes */
+/* WordPress & Kadence Blocks Global Support */
+:root {
+  --global-kb-gap-md: 2rem;
+  --global-kb-gap-sm: 1rem;
+  --global-kb-spacing-xxl: 5rem;
+  --global-kb-spacing-3xl: 6.5rem;
+  --global-content-width: 1290px;
+  --global-content-edge-padding: 1.5rem;
+
+  /* Kadence Palette (Extracted from Live Site) */
+  --global-palette1: #3182CE;
+  --global-palette3: #1A202C;
+  /* Dark text/bg */
+  --global-palette4: #2D3748;
+  --global-palette7: #EDF2F7;
+  /* Light gray */
+  --global-palette9: #ffffff;
+  /* White */
+  --global-palette15: #3182CE;
+  /* Accent Blue */
+
+  /* Global Fonts (Fallbacks) */
+  --global-kb-font-size-sm: 0.9rem;
+  --global-kb-font-size-md: 1.25rem;
+  --global-kb-font-size-lg: 2rem;
+}
+
+/* Base Layout Classes */
 .input-group {
   @apply relative;
 }
@@ -91,13 +118,48 @@ body {
 
 .alignwide {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--global-content-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Ensure images don't overflow */
+/* Image Handling */
 .wordpress-content img {
   max-width: 100%;
   height: auto;
+}
+
+/* Kadence SVG Icon Fixes (Prevent Massive Icons) */
+.kb-svg-icon-wrap,
+.kt-svg-icon-list-single,
+.kb-adv-heading-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.kb-svg-icon-wrap svg,
+.kt-svg-icon-list-single svg,
+.kb-adv-heading-icon svg {
+  width: 1em;
+  /* Force SVG to respect font-size */
+  height: 1em;
+  fill: currentColor;
+}
+
+/* Fix Info Boxes */
+.kt-blocks-info-box-media-container {
+  display: flex;
+  justify-content: center;
+}
+
+.kadence-info-box-icon-inner-container {
+  display: inline-flex;
+}
+
+/* Row Layout Fixes */
+.kt-row-column-wrap {
+  display: grid;
+  /* Restore grid behavior if lost */
 }
