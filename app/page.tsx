@@ -39,56 +39,20 @@ export default async function Home() {
 
 
   return (
-    <div className="bg-black min-h-screen pb-20">
-      <Hero title={homePage?.title} />
-
-      <DownloadSection />
-
-      <Features />
-
-      <ComparisonTable />
-
-      <ProsCons />
-
-      <InstallationGuide />
-
-      <Compatibility />
-
-      <AboutSection content={homePage?.content} />
-
-      <PlaylistGuide />
-
-      <UpcomingFeatures />
-
-      <FAQ />
-
-      <section className="container mx-auto px-6 max-w-5xl mt-20">
-
-        {/* App Info Section */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-            <span className="w-1 h-8 bg-[#1ED760] rounded-full"></span>
-            Spotify Mod APK Details
-          </h2>
-          <AppInfoTable />
-
-          <div className="prose prose-invert max-w-none text-zinc-300">
-            <p className="text-lg leading-relaxed mb-6">
-              **Spotify Premium Mod APK** is the unlocked version of the world&apos;s most popular music streaming app. It gives you access to a massive library of millions of songs, podcasts, and videos from artists all over the globe, without any subscription fees.
-            </p>
-            <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 my-8">
-              <h3 className="text-xl font-bold text-white mb-4 text-[#1ED760]">Why Download the Mod?</h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-zinc-400">
-                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> No Audio Ads</li>
-                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> Unlimited Skips</li>
-                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> Extreme Audio Quality</li>
-                <li className="flex items-center gap-2"><div className="size-1.5 bg-[#1ED760] rounded-full" /> No Root Required</li>
-              </ul>
-            </div>
-          </div>
+    <div className="bg-black min-h-screen">
+      {homePage?.content ? (
+        <div className="wordpress-content w-full">
+          <div dangerouslySetInnerHTML={{ __html: homePage.content }} />
         </div>
+      ) : (
+        <div className="container mx-auto px-6 py-20 text-center text-white">
+          <h1 className="text-3xl font-bold mb-4">{homePage?.title || "Loading..."}</h1>
+          <p>Content is empty. Please add content in WordPress.</p>
+        </div>
+      )}
 
-        {/* Blog / Resources Section */}
+      {/* Keep the Latest Guides section as it's dynamic blog posts, typically below main page content */}
+      <section className="container mx-auto px-6 max-w-5xl py-20">
         <div id="blogs">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-3xl font-bold text-white tracking-tight">Latest Guides & Updates</h2>
@@ -107,7 +71,6 @@ export default async function Home() {
             </div>
           )}
         </div>
-
       </section>
     </div>
   );
