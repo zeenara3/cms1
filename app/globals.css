@@ -2,8 +2,16 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  /* Zinc 950 */
+  --foreground: #fafafa;
+  /* Zinc 50 */
+  --primary: #8b5cf6;
+  /* Violet 500 */
+  --secondary: #ec4899;
+  /* Pink 500 */
+  --accent: #22d3ee;
+  /* Cyan 400 */
 }
 
 @theme inline {
@@ -11,20 +19,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom Gradients */
+  --image-gradient: linear-gradient(to right, var(--primary), var(--secondary));
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  @apply antialiased selection:bg-blue-500/30;
+  @apply antialiased selection:bg-purple-500/30 selection:text-white;
 }
 
 /* Custom Scrollbar */
