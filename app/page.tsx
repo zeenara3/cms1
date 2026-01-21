@@ -10,6 +10,9 @@ import ProsCons from "@/components/ProsCons";
 import InstallationGuide from "@/components/InstallationGuide";
 import Compatibility from "@/components/Compatibility";
 import FAQ from "@/components/FAQ";
+import AboutSection from "@/components/AboutSection";
+import PlaylistGuide from "@/components/PlaylistGuide";
+import UpcomingFeatures from "@/components/UpcomingFeatures";
 
 export const dynamic = 'force-static';
 export const revalidate = 600; // Revalidate every 10 minutes
@@ -43,6 +46,12 @@ export default async function Home() {
       <InstallationGuide />
 
       <Compatibility />
+
+      <AboutSection />
+
+      <PlaylistGuide />
+
+      <UpcomingFeatures />
 
       <FAQ />
 
