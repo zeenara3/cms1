@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/wordpress";
+import { Post } from "@/lib/types";
 import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import AppInfoTable from "@/components/AppInfoTable";
