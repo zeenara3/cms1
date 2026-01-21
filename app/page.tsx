@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import AppInfoTable from "@/components/AppInfoTable";
 
-export const runtime = 'edge';
+export const dynamic = 'force-static';
 export const revalidate = 600; // Revalidate every 10 minutes
 
 export default async function Home() {
