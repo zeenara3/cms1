@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  trailingSlash: true,
 };
 
 if (process.env.NODE_ENV === "development") {

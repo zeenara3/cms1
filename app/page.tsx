@@ -7,7 +7,14 @@ export const runtime = 'edge';
 export const revalidate = 600; // Revalidate every 10 minutes
 
 export default async function Home() {
-  const posts = await getAllPosts(20);
+  let posts: Post[] = [];
+  try {
+    posts = await getAllPosts(20);
+    console.log('Posts fetched:', posts?.length);
+  } catch (err) {
+    console.error('Failed to fetch posts:', err);
+    // Continue with empty posts to show Hero at least
+  }
 
   // We'll use the first post as the "featured app" content if needed, 
   // or just pass it to the Hero for the image.
