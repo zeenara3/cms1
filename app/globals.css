@@ -334,6 +334,22 @@ nav,
   /* Ensure no spillover */
 }
 
+/* --- DOWNLOAD SECTION LAYOUT FIX --- */
+/* Force Top Alignment for the "How to Download" Text Column */
+/* This prevents it from floating in the middle of the tall image stack */
+.kt-row-column-wrap>.kadence-column534_66c1d2-0d {
+  align-self: flex-start !important;
+  /* Move grid item to top */
+  margin-top: 0 !important;
+}
+
+.kadence-column534_66c1d2-0d .kt-inside-inner-col {
+  justify-content: flex-start !important;
+  /* Move flex content to top */
+  padding-top: 2rem !important;
+  /* Add slight breathing room from header */
+}
+
 /* 3. Typography Polish */
 body {
   -webkit-font-smoothing: antialiased;
