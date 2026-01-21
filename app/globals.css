@@ -163,3 +163,58 @@ body {
   display: grid;
   /* Restore grid behavior if lost */
 }
+
+/* --- THEME POLISH OVERRIDES (Dark Mode Fixes) --- */
+
+/* 1. Eliminate White Backgrounds/Borders */
+.wp-block-kadence-rowlayout,
+.wp-block-kadence-column,
+.kt-inside-inner-col {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 2. Fix Text Colors for Dark Theme */
+.wordpress-content h1,
+.wordpress-content h2,
+.wordpress-content h3,
+.wordpress-content h4,
+.wordpress-content h5,
+.wordpress-content h6,
+.kt-adv-heading-text,
+.kb-adv-text-inner {
+  color: #ffffff !important;
+  /* Force white headings */
+}
+
+.wordpress-content p,
+.wordpress-content li {
+  color: #a1a1aa !important;
+  /* Zinc-400 for body text */
+}
+
+/* 3. Fix Shape Dividers (Recolor to Dark/Purple) */
+.kt-row-layout-overlay,
+.kt-row-layout-bottom-sep,
+.kt-row-layout-top-sep {
+  filter: invert(1) hue-rotate(180deg);
+  /* Quick hack to darken white shapes */
+  opacity: 0.1 !important;
+  /* Make them subtle texture instead of solid blocks */
+}
+
+/* 4. Fix Obtrusive Background Numbers (The Feature Highlights) */
+/* Assuming they use a specific class or are pseudo-elements, strictly reducing opacity */
+.kt-blocks-info-box-number,
+.kt-info-box-number {
+  opacity: 0.05 !important;
+  color: #ffffff !important;
+  z-index: 0 !important;
+}
+
+/* 5. Fix "About" Section Padding */
+.wordpress-content {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
