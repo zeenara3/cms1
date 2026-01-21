@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import "./kadence-row.css";
+import "./kadence-column.css";
+import "./kadence-icon.css";
+import "./kadence-infobox.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
