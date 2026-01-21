@@ -92,4 +92,4 @@ export default function Hero({ post }: { post?: Post }) {
         </section>
     );
 }
-}
+
