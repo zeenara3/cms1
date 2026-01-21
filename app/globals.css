@@ -235,6 +235,25 @@ body {
   /* Glow effect */
 }
 
+/* --- USER REVIEWS SECTION FIX --- */
+/* Target the phone background column and constrain the marquee */
+.kadence-column534_4a0eef-aa .kt-inside-inner-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px !important;
+  /* Push content into phone screen area */
+}
+
+.kb-advanced-marquee-534_d12534-6f,
+.kadence-column534_4a0eef-aa .kb-advanced-marquee {
+  max-width: 260px !important;
+  /* Approximate width of phone screen in BG */
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  /* Ensure no spillover */
+}
+
 /* 3. Typography Polish */
 body {
   -webkit-font-smoothing: antialiased;
