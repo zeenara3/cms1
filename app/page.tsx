@@ -4,6 +4,9 @@ import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import AppInfoTable from "@/components/AppInfoTable";
 import Features from "@/components/Features";
+import DownloadSection from "@/components/DownloadSection";
+import ComparisonTable from "@/components/ComparisonTable";
+import ProsCons from "@/components/ProsCons";
 
 export const dynamic = 'force-static';
 export const revalidate = 600; // Revalidate every 10 minutes
@@ -26,7 +29,13 @@ export default async function Home() {
     <div className="bg-black min-h-screen pb-20">
       <Hero post={featuredPost} />
 
+      <DownloadSection />
+
       <Features />
+
+      <ComparisonTable />
+
+      <ProsCons />
 
       <section className="container mx-auto px-6 max-w-5xl mt-20">
 
