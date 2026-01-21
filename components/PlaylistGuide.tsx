@@ -19,21 +19,21 @@ export default function PlaylistGuide() {
                                 <div className="size-12 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-white font-bold text-xl shrink-0">1</div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">Create Your Playlist</h3>
-                                    <p className="text-zinc-400">In the Spotify app, go to 'Your Library' and tap the '+' icon. Select 'Playlist' to start a new one.</p>
+                                    <p className="text-zinc-400">In the Spotify app, go to &apos;Your Library&apos; and tap the &apos;+&apos; icon. Select &apos;Playlist&apos; to start a new one.</p>
                                 </div>
                             </div>
                             <div className="flex gap-6">
                                 <div className="size-12 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-white font-bold text-xl shrink-0">2</div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">Name Your Vibe</h3>
-                                    <p className="text-zinc-400">Give your playlist a name that fits its mood, like 'Late Night Drives' or 'Workout Fuel'.</p>
+                                    <p className="text-zinc-400">Give your playlist a name that fits its mood, like &apos;Late Night Drives&apos; or &apos;Workout Fuel&apos;.</p>
                                 </div>
                             </div>
                             <div className="flex gap-6">
                                 <div className="size-12 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-white font-bold text-xl shrink-0">3</div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">Add Songs</h3>
-                                    <p className="text-zinc-400">Tap 'Add songs' to search for tracks. Spotify will also give you smart recommendations.</p>
+                                    <p className="text-zinc-400">Tap &apos;Add songs&apos; to search for tracks. Spotify will also give you smart recommendations.</p>
                                 </div>
                             </div>
                         </div>

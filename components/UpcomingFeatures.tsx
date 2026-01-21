@@ -15,7 +15,7 @@ export default function UpcomingFeatures() {
                     Upcoming Features <span className="text-[#1ED760]">2026</span>
                 </h2>
                 <p className="text-zinc-400 text-lg text-center mb-16 max-w-2xl mx-auto">
-                    The future of music streaming is here. Check out what's coming next to the platform.
+                    The future of music streaming is here. Check out what&apos;s coming next to the platform.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
