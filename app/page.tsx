@@ -1,5 +1,5 @@
-import { getAllPosts } from "@/lib/wordpress";
-import { Post } from "@/lib/types";
+import { getAllPosts, getPageBySlug } from "@/lib/wordpress";
+import { Post, Page } from "@/lib/types";
 import Hero from "@/components/Hero";
 import PostCard from "@/components/PostCard";
 import AppInfoTable from "@/components/AppInfoTable";
@@ -27,13 +27,20 @@ export default async function Home() {
     // Continue with empty posts to show Hero at least
   }
 
-  // We'll use the first post as the "featured app" content if needed, 
-  // or just pass it to the Hero for the image.
-  const featuredPost = posts?.[0]; // Safe access
+  let homePage: Page | null = null;
+
+  try {
+    homePage = await getPageBySlug('home');
+    console.log('Home page fetched:', homePage?.title);
+  } catch (e) {
+    console.error('Failed to fetch home page:', e);
+  }
+
+
 
   return (
     <div className="bg-black min-h-screen pb-20">
-      <Hero />
+      <Hero title={homePage?.title} />
 
       <DownloadSection />
 
@@ -47,7 +54,7 @@ export default async function Home() {
 
       <Compatibility />
 
-      <AboutSection />
+      <AboutSection content={homePage?.content} />
 
       <PlaylistGuide />
 

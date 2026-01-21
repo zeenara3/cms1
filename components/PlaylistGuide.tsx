@@ -11,7 +11,7 @@ export default function PlaylistGuide() {
                             <span className="text-[#1ED760]">Playlist?</span>
                         </h2>
                         <p className="text-zinc-400 text-lg mb-12">
-                            Curate your own vibe. It's easy to build your personal collection of tracks.
+                            Curate your own vibe. It&apos;s easy to build your personal collection of tracks.
                         </p>
 
                         <div className="space-y-8">

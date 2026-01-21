@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-import { AllPostsResponse, SinglePostResponse, Post } from './types';
+import { AllPostsResponse, SinglePostResponse, Post, SinglePageResponse, Page, GeneralSettingsResponse, SiteSettings } from './types';
 
 const API_URL = process.env.WORDPRESS_API_URL || 'https://cms.imranmurtaza.com/graphql';
 
@@ -112,4 +112,50 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
  */
 export async function getRecentPosts(count = 3): Promise<Post[]> {
   return getAllPosts(count);
+}
+
+/**
+ * Fetch a single page by slug
+ */
+export async function getPageBySlug(slug: string): Promise<Page | null> {
+  const query = `
+    query GetPageBySlug($slug: ID!) {
+      page(id: $slug, idType: URI) {
+        id
+        title
+        content
+        slug
+      }
+    }
+  `;
+
+  try {
+    const data = await client.request<SinglePageResponse>(query, { slug });
+    return data.page;
+  } catch (error) {
+    console.error(`Error fetching page with slug ${slug}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Fetch site general settings
+ */
+export async function getSiteSettings(): Promise<SiteSettings | null> {
+  const query = `
+    query GetSiteSettings {
+      generalSettings {
+        title
+        description
+      }
+    }
+  `;
+
+  try {
+    const data = await client.request<GeneralSettingsResponse>(query);
+    return data.generalSettings;
+  } catch (error) {
+    console.error('Error fetching site settings:', error);
+    return null;
+  }
 }

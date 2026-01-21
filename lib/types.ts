@@ -47,3 +47,23 @@ export interface AllPostsResponse {
 export interface SinglePostResponse {
     post: Post;
 }
+
+export interface Page {
+    id: string;
+    title: string;
+    content: string;
+    slug: string;
+}
+
+export interface SinglePageResponse {
+    page: Page;
+}
+
+export interface SiteSettings {
+    title: string;
+    description: string;
+}
+
+export interface GeneralSettingsResponse {
+    generalSettings: SiteSettings;
+}

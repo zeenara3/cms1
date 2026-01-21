@@ -33,7 +33,7 @@ export default function InstallationGuide() {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">Allow Unknown Sources</h3>
                             <p className="text-zinc-400 leading-relaxed">
-                                Go to <strong>Settings {'>'} Security</strong> and enable "Install from Unknown Sources".
+                                Go to <strong>Settings {'>'} Security</strong> and enable &quot;Install from Unknown Sources&quot;.
                             </p>
                         </div>
                     </div>

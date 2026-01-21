@@ -2,7 +2,7 @@
 
 
 
-export default function Hero() {
+export default function Hero({ title }: { title?: string }) {
 
     return (
         <section className="relative w-full pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-black">
@@ -21,8 +21,12 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
-                        Spotify Premium <br />
-                        <span className="text-[#1ED760]">Mod APK 2026</span>
+                        {title ? <span dangerouslySetInnerHTML={{ __html: title }} /> : (
+                            <>
+                                Spotify Premium <br />
+                                <span className="text-[#1ED760]">Mod APK 2026</span>
+                            </>
+                        )}
                     </h1>
 
                     <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
