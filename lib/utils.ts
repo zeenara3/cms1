@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function formatDate(dateString: string) {
     try {
         return format(parseISO(dateString), 'MMMM d, yyyy');
-    } catch (error) {
+    } catch {
         return dateString;
     }
 }
