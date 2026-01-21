@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { getSiteSettings } from "@/lib/wordpress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,13 +19,14 @@ export const metadata: Metadata = {
   description: "High-performance headless WordPress site powered by Next.js and Cloudflare Pages.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const settings = await getSiteSettings();
-  const siteTitle = settings?.title || "Spotifull";
+  // const settings = await getSiteSettings();
+  // const siteTitle = settings?.title || "Spotifull";
+  const siteTitle = "Spotifull";
 
   return (
     <html lang="en">
