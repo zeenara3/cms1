@@ -39,7 +39,7 @@ export default async function Home() {
 
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="wordpress-page-wrapper">
       {homePage?.content ? (
         <div className="wordpress-content w-full">
           <div dangerouslySetInnerHTML={{ __html: homePage.content }} />

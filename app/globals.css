@@ -5,26 +5,14 @@
 
 :root {
   --background: 0 0% 0%;
-  /* Black */
   --foreground: 0 0% 100%;
-  /* White */
-
-  /* Spotify Green */
   --primary: 141 73% 42%;
-  /* #1ED760 */
   --primary-foreground: 0 0% 0%;
-
   --secondary: 0 0% 7%;
-  /* Dark Gray #121212 */
   --secondary-foreground: 0 0% 100%;
-
   --accent: 0 0% 11%;
   --accent-foreground: 0 0% 100%;
-
   --radius: 0.5rem;
-
-  /* Custom Gradients - Green focused */
-  --image-gradient: linear-gradient(135deg, rgba(30, 215, 96, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 @theme inline {
@@ -32,9 +20,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  /* Custom Gradients */
-  /* The image-gradient is now defined in :root */
 }
 
 body {
@@ -74,8 +59,9 @@ body {
   @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border-b border-gray-200 dark:border-gray-800;
 }
 
-/* WordPress & Kadence Blocks Global Support */
+/* WordPress & Kadence Blocks Global Support - AUTHENTIC PALETTE */
 :root {
+  /* Layout Defaults */
   --global-kb-gap-md: 2rem;
   --global-kb-gap-sm: 1rem;
   --global-kb-spacing-xxl: 5rem;
@@ -83,22 +69,26 @@ body {
   --global-content-width: 1290px;
   --global-content-edge-padding: 1.5rem;
 
-  /* Kadence Palette (Extracted from Live Site) */
-  --global-palette1: #3182CE;
+  /* Kadence Palette (AUTHENTIC IMPORT from cms.imranmurtaza.com) */
+  --global-palette1: #2B6CB0;
+  --global-palette2: #215387;
   --global-palette3: #1A202C;
-  /* Dark text/bg */
+  /* Text Color (Dark) */
   --global-palette4: #2D3748;
+  --global-palette5: #4A5568;
+  --global-palette6: #718096;
   --global-palette7: #EDF2F7;
-  /* Light gray */
+  --global-palette8: #F7FAFC;
+  /* Light Backgrounds */
   --global-palette9: #ffffff;
   /* White */
-  --global-palette15: #3182CE;
-  /* Accent Blue */
 
-  /* Global Fonts (Fallbacks) */
+  /* Fallback Font Sizes */
   --global-kb-font-size-sm: 0.9rem;
   --global-kb-font-size-md: 1.25rem;
   --global-kb-font-size-lg: 2rem;
+  --global-kb-font-size-xl: 3rem;
+  --global-kb-font-size-xxl: 4rem;
 }
 
 /* Base Layout Classes */
@@ -107,13 +97,9 @@ body {
 }
 
 .alignfull {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 .alignwide {
@@ -148,7 +134,7 @@ body {
   fill: currentColor;
 }
 
-/* Fix Info Boxes */
+/* Fix Info Boxes to ensure they can stack or grid properly */
 .kt-blocks-info-box-media-container {
   display: flex;
   justify-content: center;
@@ -158,63 +144,7 @@ body {
   display: inline-flex;
 }
 
-/* Row Layout Fixes */
+/* Row Layout Fixes - Ensure Grid works */
 .kt-row-column-wrap {
   display: grid;
-  /* Restore grid behavior if lost */
-}
-
-/* --- THEME POLISH OVERRIDES (Dark Mode Fixes) --- */
-
-/* 1. Eliminate White Backgrounds/Borders */
-.wp-block-kadence-rowlayout,
-.wp-block-kadence-column,
-.kt-inside-inner-col {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* 2. Fix Text Colors for Dark Theme */
-.wordpress-content h1,
-.wordpress-content h2,
-.wordpress-content h3,
-.wordpress-content h4,
-.wordpress-content h5,
-.wordpress-content h6,
-.kt-adv-heading-text,
-.kb-adv-text-inner {
-  color: #ffffff !important;
-  /* Force white headings */
-}
-
-.wordpress-content p,
-.wordpress-content li {
-  color: #a1a1aa !important;
-  /* Zinc-400 for body text */
-}
-
-/* 3. Fix Shape Dividers (Recolor to Dark/Purple) */
-.kt-row-layout-overlay,
-.kt-row-layout-bottom-sep,
-.kt-row-layout-top-sep {
-  filter: invert(1) hue-rotate(180deg);
-  /* Quick hack to darken white shapes */
-  opacity: 0.1 !important;
-  /* Make them subtle texture instead of solid blocks */
-}
-
-/* 4. Fix Obtrusive Background Numbers (The Feature Highlights) */
-/* Assuming they use a specific class or are pseudo-elements, strictly reducing opacity */
-.kt-blocks-info-box-number,
-.kt-info-box-number {
-  opacity: 0.05 !important;
-  color: #ffffff !important;
-  z-index: 0 !important;
-}
-
-/* 5. Fix "About" Section Padding */
-.wordpress-content {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
