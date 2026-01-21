@@ -117,13 +117,15 @@ body {
 
 /* --- HERO SECTION SPECIFIC FIXES --- */
 /* Target the first row layout (The Hero) */
-.wordpress-content>div>.wp-block-kadence-rowlayout:first-child,
-.wordpress-content>.wp-block-kadence-rowlayout:first-child {
-  background: linear-gradient(120deg, rgb(75, 23, 168) 0%, rgb(41, 107, 182) 100%) !important;
+/* We use a specific chain to ensure we hit the right element */
+.wordpress-content>div>.wp-block-kadence-rowlayout:first-of-type,
+.wordpress-content .kb-row-layout-id534_1c598d-01 {
+  background: linear-gradient(120deg, #4b17a8 0%, #296bb6 100%) !important;
   padding-top: 4rem !important;
   padding-bottom: 4rem !important;
   margin-top: -20px !important;
-  /* Pull up to touch navbar */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Force Hero Text to be White */
