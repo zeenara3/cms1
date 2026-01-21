@@ -16,7 +16,7 @@ export default function Hero({ post }: { post: Post }) {
             <div className="container px-4 md:px-6 mx-auto text-center z-10">
                 <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-300 backdrop-blur-md mb-8">
                     <span className="flex h-2 w-2 rounded-full bg-pink-500 mr-2 animate-pulse"></span>
-                    New Updates Available v2.0
+                    New Updates Available v2.1 (Live)
                 </div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 mb-6 drop-shadow-sm">
