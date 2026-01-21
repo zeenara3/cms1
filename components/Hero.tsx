@@ -1,74 +1,100 @@
+```
 import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@/lib/types';
 import { formatDate } from '@/lib/utils';
 
-export default function Hero({ post }: { post: Post }) {
-    // We might not use the 'post' strictly for the hero layout anymore if we want a "landing page" feel,
-    // but we can feature it as a "Top Pick".
+export default function Hero({ post }: { post?: Post }) {
+  // Post is optional here as this is a static landing hero now.
+  
+  return (
+    <section className="relative w-full pt-32 pb-12 md:pt-40 md:pb-24 border-b border-white/5 overflow-hidden">
+        
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-violet-900/20 via-black to-black -z-10" />
+        <div className="absolute top-0 right-0 w-1/2 h-[500px] bg-pink-500/10 blur-[120px] -z-10" />
 
-    return (
-        <section className="relative w-full pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b border-white/5">
-
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-violet-500/20 via-pink-500/10 to-transparent blur-[100px] -z-10" />
-
-            <div className="container px-4 md:px-6 mx-auto text-center z-10">
-                <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-zinc-300 backdrop-blur-md mb-8">
-                    <span className="flex h-2 w-2 rounded-full bg-pink-500 mr-2 animate-pulse"></span>
-                    New Updates Available v2.1 (Live)
+        <div className="container px-4 md:px-6 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="text-left z-10">
+                <div className="inline-flex items-center px-3 py-1 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-xs font-bold uppercase tracking-widest mb-6">
+                    Verified & Safe • v3.0 (Latest)
                 </div>
-
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 mb-6 drop-shadow-sm">
-                    Next Generation <br />
-                    <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">Digital Assets</span>
+                
+                <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                    Download <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-500">PicsArt Mod APK</span> <br/> 
+                    For Android
                 </h1>
-
-                <p className="max-w-[800px] mx-auto text-zinc-400 md:text-xl lg:text-2xl mb-10 leading-relaxed">
-                    Discover high-quality premium resources for your next creative project.
-                    Powered by Cloudflare and Next.js.
+                
+                <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
+                    Unlock premium features, remove ads, and access all gold assets for free. 
+                    The ultimate photo editing experience on your mobile device.
                 </p>
 
-                {/* Search Bar Simulation */}
-                <div className="max-w-xl mx-auto relative mb-16">
-                    <div className="absolute inset-0 bg-gradient-to-r from-violet-500 to-pink-500 rounded-full blur opacity-25" />
-                    <div className="relative flex items-center bg-zinc-900/80 backdrop-blur-xl border border-white/10 rounded-full p-2 pl-6 shadow-2xl ring-1 ring-white/10">
-                        <svg className="size-5 text-zinc-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        <input
-                            type="text"
-                            placeholder="Search for templates, assets..."
-                            className="bg-transparent border-none outline-none text-white placeholder-zinc-500 w-full"
-                        />
-                        <button className="bg-white text-black rounded-full px-6 py-3 font-semibold hover:bg-zinc-200 transition-colors">
-                            Search
-                        </button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-pink-600 text-white font-bold text-lg shadow-lg shadow-violet-500/25 hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                        <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                        Download Now
+                    </button>
+                    <button className="px-8 py-4 rounded-xl bg-zinc-800 text-white font-bold text-lg hover:bg-zinc-700 transition-colors flex items-center justify-center gap-2">
+                        <svg className="size-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        App Info
+                    </button>
+                </div>
+                
+                <div className="mt-8 flex items-center gap-6 text-sm text-zinc-500 font-medium">
+                    <div className="flex items-center gap-2">
+                        <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Virus Free
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Anti-Ban
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <svg className="size-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        All Assets Unlocked
                     </div>
                 </div>
-
-                {/* Featured Post Mini-Card (if post exists) */}
-                {post && (
-                    <div className="inline-block relative group">
-                        <Link href={`/${post.slug}`} className="flex items-center gap-4 bg-zinc-900/50 border border-white/10 rounded-2xl p-2 pr-6 hover:bg-zinc-800/50 transition-all cursor-pointer">
-                            <div className="size-12 rounded-xl bg-zinc-800 overflow-hidden relative">
-                                {post.featuredImage?.node?.sourceUrl && (
-                                    <Image
-                                        src={post.featuredImage.node.sourceUrl}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                )}
-                            </div>
-                            <div className="text-left">
-                                <div className="text-xs text-pink-400 font-bold uppercase tracking-wider mb-0.5">Featured</div>
-                                <div className="text-sm font-medium text-white line-clamp-1 max-w-[200px]">{post.title}</div>
-                            </div>
-                            <svg className="size-4 text-zinc-500 group-hover:text-white transition-colors group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
-                        </Link>
-                    </div>
-                )}
-
             </div>
-        </section>
-    );
+
+            {/* Right Content / Image Feature */}
+            <div className="relative mx-auto w-full max-w-md lg:max-w-full">
+                 <div className="relative aspect-[4/5] w-full bg-gradient-to-br from-zinc-800 to-black rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex items-center justify-center group">
+                      {/* Using the featured post image if available, otherwise a placeholder for the "App Screenshot" */}
+                      {post?.featuredImage?.node?.sourceUrl ? (
+                         <Image 
+                            src={post.featuredImage.node.sourceUrl} 
+                            alt="App Screenshot" 
+                            fill 
+                            className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" 
+                         />
+                      ) : (
+                         <div className="text-center p-8">
+                             <div className="size-24 bg-gradient-to-br from-violet-600 to-pink-500 rounded-3xl mx-auto mb-6 flex items-center justify-center text-4xl text-white font-bold shadow-lg shadow-pink-500/20">
+                                P
+                             </div>
+                             <h3 className="text-2xl font-bold text-white mb-2">PicsArt Premium</h3>
+                             <p className="text-zinc-400">The #1 Creative Platform</p>
+                         </div>
+                      )}
+                      
+                      {/* Floating Badge */}
+                      <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4">
+                            <div className="bg-green-500/20 text-green-400 p-2 rounded-lg">
+                                <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                            </div>
+                            <div>
+                                <div className="text-white font-bold">10M+ Downloads</div>
+                                <div className="text-xs text-zinc-400">Trusted by Creators</div>
+                            </div>
+                      </div>
+                 </div>
+            </div>
+
+        </div>
+    </section>
+  );
 }
+```
