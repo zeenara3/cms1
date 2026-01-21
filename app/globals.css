@@ -196,6 +196,68 @@ body {
 }
 
 /* 2. Prevent Negative Margins on Headings/Inner Content */
+/* --- PREMIUM POLISH: GLASSMORPHISM & DEPTH --- */
+
+/* 1. App Info Boxes - Glass Effect */
+/* Target Kadence Info Boxes specifically */
+.kt-blocks-info-box-link-wrap,
+.wp-block-kadence-infobox {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 1.5rem !important;
+  /* Ensure breathing room */
+}
+
+.kt-blocks-info-box-link-wrap:hover,
+.wp-block-kadence-infobox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 2. Feature List Icons - Force "Premium" Color */
+/* Target SVG icons in lists to match the authentic blue/purple palette or a success green */
+.kt-svg-icon-list-item .kb-svg-icon-wrap,
+.wp-block-kadence-icon .kb-svg-icon-wrap {
+  color: #4b17a8 !important;
+  /* Match Hero Purple or use #296bb6 Blue */
+}
+
+.kt-svg-icon-list-item .kb-svg-icon-wrap svg,
+.wp-block-kadence-icon .kb-svg-icon-wrap svg {
+  fill: currentColor !important;
+  filter: drop-shadow(0 0 5px rgba(75, 23, 168, 0.4));
+  /* Glow effect */
+}
+
+/* 3. Typography Polish */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+  /* Tighten up headings for modern look */
+}
+
+/* 4. Fix Table/Data Borders in Dark Mode */
+td,
+th {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. Ensure Columns Don't Collapse */
 .kt-inside-inner-col>* {
   margin-top: 0 !important;
   /* Prevent headers from pulling themselves up into images */
