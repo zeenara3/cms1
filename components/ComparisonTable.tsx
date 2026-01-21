@@ -30,7 +30,7 @@ export default function ComparisonTable() {
                                 { name: 'Seek & Repeat', free: false, mod: true, premium: true },
                                 { name: 'Spotify Connect', free: false, mod: true, premium: true },
                                 { name: 'Price', free: 'Free', mod: 'FREE', premium: '$11.99/mo' },
-                            ].map((row, i) => (
+                            ].map((row) => (
                                 <tr key={row.name} className="border-b border-zinc-800/50 hover:bg-white/5 transition-colors">
                                     <td className="p-4 py-6 font-bold text-zinc-300">{row.name}</td>
                                     <td className="p-4 py-6 text-center">

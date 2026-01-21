@@ -49,7 +49,7 @@ export default async function Home() {
 
           <div className="prose prose-invert max-w-none text-zinc-300">
             <p className="text-lg leading-relaxed mb-6">
-              **Spotify Premium Mod APK** is the unlocked version of the world's most popular music streaming app. It gives you access to a massive library of millions of songs, podcasts, and videos from artists all over the globe, without any subscription fees.
+              **Spotify Premium Mod APK** is the unlocked version of the world&apos;s most popular music streaming app. It gives you access to a massive library of millions of songs, podcasts, and videos from artists all over the globe, without any subscription fees.
             </p>
             <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 my-8">
               <h3 className="text-xl font-bold text-white mb-4 text-[#1ED760]">Why Download the Mod?</h3>

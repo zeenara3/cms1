@@ -1,10 +1,8 @@
 
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { Post } from '@/lib/types';
 
-export default function Hero({ post }: { post?: Post }) {
+
+export default function Hero() {
 
     return (
         <section className="relative w-full pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-black">
