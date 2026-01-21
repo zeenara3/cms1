@@ -147,4 +147,34 @@ body {
 /* Row Layout Fixes - Ensure Grid works */
 .kt-row-column-wrap {
   display: grid;
+  gap: var(--global-kb-gap-md, 2rem);
+  /* Ensure gap exists */
+}
+
+/* --- LAYOUT BUG FIXES (Prevent Crashing Overlaps) --- */
+
+/* 1. Neutralize Aggressive Negative Margins on Columns */
+/* Many WP layouts use negative margins for overlap effects, but they break easily. 
+   We reset them to ensure content stacking or safe spacing. */
+.wp-block-kadence-column {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  z-index: 1 !important;
+  /* Ensure columns don't hide behind others */
+}
+
+/* 2. Prevent Negative Margins on Headings/Inner Content */
+.kt-inside-inner-col>* {
+  margin-top: 0 !important;
+  /* Prevent headers from pulling themselves up into images */
+}
+
+/* 3. Ensure Columns Don't Collapse */
+.wp-block-kadence-rowlayout,
+.wp-block-kadence-column {
+  min-height: auto !important;
+  /* specific height overrides can cause collapse */
+  height: auto !important;
 }
