@@ -44,23 +44,35 @@ export default async function Home() {
 
       <DownloadSection />
 
-      <Features />
+      <DownloadSection />
 
-      <ComparisonTable />
+      {homePage?.content ? (
+        <section className="container mx-auto px-6 max-w-4xl py-20">
+          <div className="prose prose-invert prose-lg max-w-none text-zinc-300">
+            <div dangerouslySetInnerHTML={{ __html: homePage.content }} />
+          </div>
+        </section>
+      ) : (
+        <>
+          <Features />
 
-      <ProsCons />
+          <ComparisonTable />
 
-      <InstallationGuide />
+          <ProsCons />
 
-      <Compatibility />
+          <InstallationGuide />
 
-      <AboutSection content={homePage?.content} />
+          <Compatibility />
 
-      <PlaylistGuide />
+          <AboutSection />
 
-      <UpcomingFeatures />
+          <PlaylistGuide />
 
-      <FAQ />
+          <UpcomingFeatures />
+
+          <FAQ />
+        </>
+      )}
 
       <section className="container mx-auto px-6 max-w-5xl mt-20">
 
