@@ -7,6 +7,9 @@ import Features from "@/components/Features";
 import DownloadSection from "@/components/DownloadSection";
 import ComparisonTable from "@/components/ComparisonTable";
 import ProsCons from "@/components/ProsCons";
+import InstallationGuide from "@/components/InstallationGuide";
+import Compatibility from "@/components/Compatibility";
+import FAQ from "@/components/FAQ";
 
 export const dynamic = 'force-static';
 export const revalidate = 600; // Revalidate every 10 minutes
@@ -36,6 +39,12 @@ export default async function Home() {
       <ComparisonTable />
 
       <ProsCons />
+
+      <InstallationGuide />
+
+      <Compatibility />
+
+      <FAQ />
 
       <section className="container mx-auto px-6 max-w-5xl mt-20">
 
